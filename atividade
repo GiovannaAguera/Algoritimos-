@@ -1,0 +1,1058 @@
+1 Algoritmo "ex.1"
+Var
+palavra : caracter
+i : inteiro
+Inicio
+escreval("Digite uma palavra: ")
+leia(palavra)
+i <- COMPR(palavra)
+escreval("O numero de caracteres e: ",i)
+Fimalgoritmo
+
+
+2 Portugol
+programa {
+ inclua biblioteca Texto --> t
+ funcao inicio() {
+   cadeia s, parte
+   escreva("Escreva uma palavra: ")
+   leia(s)
+
+   parte = t.extrair_subtexto(s,0,4)
+
+   escreva(parte)
+ }
+}
+
+
+3 VISUALG
+Algoritmo "3caracteres_a_partir_do_segundo"
+
+Var
+
+p, parte : caracter
+
+Inicio
+escreval("digite uma palavra com cinco ou mais letras")
+leia(p)
+parte <- COPIA(p,3,3)
+escreval("os tres caracteres apos a segunda letra: ", parte)
+
+Fimalgoritmo
+
+
+4 Portugol
+programa {
+ inclua biblioteca Texto --> tx
+ funcao inicio() {
+   cadeia s, prt
+   inteiro nl
+   escreva("Digite uma palavra de pelo menos 5 números: ")
+   leia(s)
+
+   nl = tx.numero_caracteres(s)
+
+   prt = tx.extrair_subtexto(s,nl-3,nl)
+
+   escreva(prt)
+ }
+}
+
+
+5 Portugol
+programa {
+ inclua biblioteca Texto --> tx
+ funcao inicio() {
+   cadeia s
+   inteiro nl, letra
+   escreva("Digite uma palavra: ")
+   leia(s)
+
+   nl = tx.numero_caracteres(s)
+   
+   para(inteiro i = 0; i<= nl; i++)
+   l = t.extrair_subtexto(s,i)
+   escreva(l"\n")
+
+}
+
+  
+
+6 Portugol
+programa {
+ funcao inicio() {
+   cadeia s, s1
+
+   escreva("Digite uma palavra: ")
+   leia(s)
+   escreva("Digite outra palavra: ")
+   leia(s1)
+
+   escreva("As suas palavras unidas são:",s,s1)
+ }
+}
+
+
+
+
+
+
+
+VisualG
+
+Algoritmo "ex.7"
+
+Var
+ s: caracter
+ i: inteiro
+
+
+Inicio
+  escreval("digite sua palavra")
+  leia(s)
+  s <- maiusc(s)
+
+  escreval("o numero de carac eh ", s)
+
+Fimalgoritmo
+
+
+
+
+8  Portugol 
+programa {
+ inclua biblioteca Texto --> tx
+ funcao inicio() {
+   cadeia s
+   escreva("Digite uma palavra inteira maiuscula: ")
+   leia(s)
+
+   s= tx.caixa_baixa(s)
+
+   escreva(s)
+
+ }
+}
+
+
+
+
+
+Algoritmo "ex.9"
+
+Var
+l, inv, pal : caractere
+i : inteiro
+
+Inicio
+      escreval("Digite uma palavra para ser apresentada ao contrário")
+      leia(pal)
+      para i de 1 ate compr(pal) faca
+           l := copia(pal,i,1)
+           inv := l + inv
+      fimpara
+      escreval("A palavra ",pal," ao contrário é: ",inv,"!")
+
+Fimalgoritmo
+
+
+
+
+
+Algoritmo "ex.10"
+
+Var
+l, pal, pal1 : caractere
+i : inteiro
+
+Inicio
+      escreval("Digite uma palavra: ")
+      leia(pal)
+      para i de 1 ate compr(pal) faca
+           se i%2 = 0 entao
+              l := copia(pal,i,1)
+              l := minusc(l)
+              pal1 := pal1+l
+           senao
+           l := copia(pal,i,1)
+           l := maiusc(l)
+           pal1 := pal1 + l
+           fimse
+      fimpara
+      escreval("Sua palavra é: ",pal1)
+
+Fimalgoritmo
+
+VisualG
+
+
+
+
+Algoritmo "Ex.11"
+
+Var
+pal, l : caracter
+i, num : inteiro
+
+Inicio
+      escreval("Digite uma palavra de 4 a 15 caracteres:")
+      leia(pal)
+      se (compr(pal) > 4) e (compr(pal) < 15) entao
+         para i de 1 ate compr(pal) faca
+              l := copia(pal,i,1)
+              num := asc(l)
+              escreval(num)
+         fimpara
+      senao escreval("Sua palavra não atende os requisitos de comprimento")
+      fimse
+      
+
+
+
+
+
+Fimalgoritmo
+
+Algoritmo "Ex.12"
+
+Var
+pal, l, result, fim : caractere
+i, num : inteiro
+
+Inicio
+      escreval("Digite uma palavra que tenha de 3 a 20 caracteres: ")
+      leia(pal)
+      se (compr(pal) > 3) e (compr(pal) < 20) entao
+         para i de 1 ate compr(pal) faca
+              l := copia(pal,i,1)
+              num := asc(l)
+              num := num+10
+              result := carac(num)
+              fim := fim + result
+         fimpara
+         escreval(fim)
+      senao escreval("Sua palavra não está entre 3 e 20 caracteres")
+      fimse
+Fimalgoritmo
+
+
+
+
+
+
+Algoritmo "Ex.13"
+
+
+Var
+palavra, r1, r2, palavra2: caracter
+i,x,z:inteiro
+Inicio
+      escreval("digite uma palavra entre 4 a 12 letras")
+      leia (palavra)
+      se (compr(palavra) < 4) ou (compr(palavra) > 12) entao
+         escreval ("esta palavra nao tem entre 4 a 12 letras")
+      senao
+              palavra2 := ""
+              para i de 1 ate compr(palavra)faca
+                   r1 := copia(palavra,i,1)
+                   x:= asc(r1)
+                   r2:= carac(x+20)
+                   z := asc(r2)
+                   palavra2:= palavra2+r2
+                   escreval(r1," (",x,") substituir por ",r2," (",z,") na posiçao ",i)
+              fimpara
+              escreval(palavra2)
+      fimse
+Fimalgoritmo
+
+
+
+
+
+
+
+algoritmo "14"
+var
+    nome, primeiro, ultimo,resultado : caracter
+    i : inteiro
+    
+inicio
+   escreval("digite uma palavra ")
+   leia(nome)
+   se compr(nome)>=2 entao
+       primeiro :=maiusc (copia(nome,1,1))
+       ultimo:=maiusc(copia(nome,compr(nome),1))
+       resultado:=primeiro
+    para i de 2 ate compr(nome)- 1 passo 1 faca
+       resultado:= resultado+ minusc(copia(nome,i,1))
+   fimpara
+    resultado:= resultado+ultimo
+   escreval("resultado ",resultado)
+ fimalgoritmo
+
+
+
+
+
+
+Algoritmo "15"
+
+Var
+nome1,nome2:caracter
+
+Inicio
+escreval("digite 2 nomes")
+leia(nome1,nome2)
+se (compr(nome1)> compr(nome2)) entao
+escreval ("a maior palavra eh; ",nome1)
+escreval ("e a menor palavra eh: ",nome2)
+senao
+escreval ("a maior palavra eh; ",nome2)
+escreval ("e a menor palavra eh: ",nome1)
+fimse
+fimalgoritmo
+
+
+
+
+
+
+
+
+
+Algoritmo "ex.17"
+
+Var
+l, nom : caractere
+i, vog, num : inteiro
+
+Inicio
+      escreval("Digite um nome: ")
+      leia(nom)
+      vog := 0
+      para i de 1 ate compr(nom) faca
+           l := copia(nom,i,1)
+           num := asc(l)
+           escolha num
+                   caso 97, 65
+                        vog := vog + 1
+                   caso 69, 101
+                        vog := vog + 1
+                   caso 73, 105
+                        vog := vog + 1
+                   caso 79, 111
+                        vog := vog + 1
+                   caso 85, 117
+                        vog := vog + 1
+           fimescolha
+      fimpara
+      escreval("A quantidade de vogais no nome é: ",vog)
+Fimalgoritmo
+
+
+
+
+
+
+Algoritmo "ex.18"
+
+Var
+l, nom : caractere
+i, vog, num : inteiro
+
+Inicio
+      escreval("Digite um nome: ")
+      leia(nom)
+      vog := 0
+      para i de 1 ate compr(nom) faca
+           l := copia(nom,i,1)
+           num := asc(l)
+           escolha num
+                   caso 65
+                        vog := vog + 1
+                   caso 69
+                        vog := vog + 1
+                   caso 73
+                        vog := vog + 1
+                   caso 79
+                        vog := vog + 1
+                   caso 85
+                        vog := vog + 1
+           fimescolha
+      fimpara
+      escreval("A quantidade de vogais maiúsculas no nome é: ",vog)
+Fimalgoritmo
+
+
+
+
+
+"ex.19"
+
+Var
+l, nom : caractere
+i, numero, num : inteiro
+
+Inicio
+      escreval("Digite uma frase que contenha caracteres numericos: ")
+      leia(nom)
+      numero := 0
+      para i de 1 ate compr(nom) faca
+           l := copia(nom,i,1)
+           num := asc(l)
+           escolha num
+                   caso 48
+                        numero := numero + 1
+                   caso 49
+                         numero := numero + 1
+                   caso 50
+                         numero := numero + 1
+                   caso 51
+                         numero := numero + 1
+                   caso 52
+                         numero := numero + 1
+                   caso 53
+                         numero := numero + 1
+                   caso 54
+                         numero := numero + 1
+                   caso 55
+                         numero := numero + 1
+                   caso 56
+                         numero := numero + 1
+           fimescolha
+      fimpara
+      escreval("A quantidade de caracteres numericos na palavra é: ",numero)
+Fimalgoritmo
+
+
+
+
+
+
+Algoritmo "Ex.20"
+
+var
+ nome, c, sobre: caracter
+ taman: inteiro
+
+inicio
+
+      repita
+      escreva("Digite seu nome completo:")
+      leia(nome)
+
+      ate compr(nome) >= 13
+
+      taman:=compr(nome)
+      repita
+
+      c:=copia(nome,taman,1)
+      taman:=taman-1
+
+      ate c=" "
+
+       taman:=taman+2
+       sobre:=copia(nome,taman,100)
+       
+       escreval(sobre)
+fimalgoritmo
+
+
+
+
+
+Algoritmo "ex.21"
+
+var
+     frase: caracter
+     posicao: inteiro
+
+inicio
+
+       escreva("Digite uma frase: ")
+       leia(frase)
+       
+       posicao := pos("amor", minusc(frase))
+
+       se posicao > 0 entao
+          escreval("Esta na frase")
+          
+       senao
+          escreval("Nao esta na frase")
+       fimse
+       
+       
+Fimalgoritmo
+
+
+
+
+
+Algoritmo "ex.22"
+
+Var
+l, nom : caractere
+i,  num : inteiro
+
+Inicio
+      escreval("Digite uma vogal: ")
+      leia(nom)
+
+      para i de 1 ate compr(nom) faca
+           l := copia(nom,i,1)
+           num := asc(l)
+           escolha num
+                   caso 97, 65
+                        escreva(nom)
+                        escreva("=")
+                        escreva(num)
+                   caso 69, 101
+                        escreva(nom)
+                        escreva("=")
+                        escreva(num)
+                   caso 73, 105
+                         escreva(nom)
+                        escreva("=")
+                        escreva(num)
+                   caso 79, 111
+                         escreva(nom)
+                        escreva("=")
+                        escreva(num)
+                   caso 85, 117
+                        escreva(nom)
+                        escreva("=")
+                        escreva(num)
+           fimescolha
+      fimpara
+
+Fimalgoritmo
+
+
+
+
+Algoritmo "ex.23"
+
+Var
+l, nom : caractere
+i,  num : inteiro
+
+Inicio
+      escreval("Digite uma vogal: ")
+      leia(nom)
+
+      para i de 1 ate compr(nom) faca
+           l := copia(nom,i,1)
+           num := asc(l)
+           escolha num
+                   caso 66,67,68,70,71,72,74,75,76,77,78,80,81,82,83,84,86,87,88,89,90
+                        escreva(nom)
+                        escreva("=")
+                        escreva(num)
+                   caso 98,99,100,102,103,104,106,107,108,109,110,112,113,114,115,116,118,119,120,121,122
+                        escreva(nom)
+                        escreva("=")
+                        escreva(num)
+
+           fimescolha
+      fimpara
+
+Fimalgoritmo
+
+
+
+
+
+
+
+Algoritmo "ex.24"
+
+Var
+pal: caractere
+i, num, bar: inteiro
+
+
+Inicio
+   bar := 0
+   escreval("Escreva uma frase: ")
+   leia(pal)
+
+   para i de 1 ate compr(pal) faca
+      num := asc(copia(pal, i, 1))
+      se(num = 32) entao
+         bar := bar + 1
+      fimse
+   fimpara
+
+   escreval("Tem ",bar, " espaços na sua frase!")
+Fimalgoritmo
+
+
+
+
+
+
+
+
+Algoritmo "ex.26"
+
+Var
+pal, pal1, pal2: caractere
+i, num: inteiro
+
+Inicio
+escreval("Escreva uma frase de 5 a 50 caracteres: ")
+leia(pal)
+pal2 := pal
+para i de 1 ate compr(pal) faca
+    pal1 := copia(pal,i,1)
+    num := asc(pal1)
+    se (num = 32) e (i = 1) entao
+       pal2 := copia(pal,i+1,(compr(pal)-i))
+    fimse
+    se (num = 32) e (i = compr(pal)) entao
+       pal2 := copia(pal2,1,compr(pal2)-1)
+    fimse
+fimpara
+escreval("|",pal2,"|")
+
+Fimalgoritmo
+
+
+
+
+
+Algoritmo "ex.27"
+
+Var
+l : caractere
+num, i : inteiro
+
+
+Inicio
+para i de 65 ate 90 faca
+    l := carac(i)
+    se i <90 entao
+       escreva(l,", ")
+    fimse
+    se i = 90 entao
+       escreva(l,".")
+    fimse
+fimpara
+
+Fimalgoritmo
+
+
+
+
+
+Algoritmo "ex.28"
+
+Var
+l, fim : caractere
+num, i : inteiro
+
+
+Inicio
+para i de 97 ate 123 faca
+    l := carac(i)
+    se i < 122 entao
+       fim := ", " + l + fim
+    fimse
+    se i = 122 entao
+       fim := l + fim
+    fimse
+fimpara
+escreva(fim)
+Fimalgoritmo
+
+
+
+
+
+Algoritmo "ex.29"
+
+Var
+pal, pal1, pal2 : caractere
+maior, i : inteiro
+
+
+Inicio
+
+escreval("Digite uma palavra: ")
+leia(pal)
+escreval("Digite outra palavra: ")
+leia(pal1)
+
+maior := compr(pal)
+se compr(pal) < compr(pal1) entao
+  maior := compr(pal1)
+fimse
+
+para i de 1 ate maior faca
+    pal2 := pal2 + copia(pal,i,1)
+    pal2 := pal2 + copia(pal1,i,1)
+
+fimpara
+escreva(pal," + ",pal1," é: ",pal2)
+Fimalgoritmo
+
+A fazer
+
+
+
+
+
+Algoritmo "ex.31"
+
+Var
+pal, pal1, c : caractere
+maior, i, num : inteiro
+
+
+Inicio
+
+escreval("Digite uma palavra: ")
+leia(pal)
+
+para i de 1 ate compr(pal) faca
+    pal1 := copia(pal,i,1)
+    num := asc(pal1)
+    se num > maior entao
+       maior := num
+    fimse
+fimpara
+
+c := carac(maior)
+
+escreva("O caractere com o maior valor ascii da palavra é: ",c,"! Com o valor de: ",maior)
+Fimalgoritmo
+
+
+
+
+
+Algoritmo "ex.32"
+
+Var
+c : caractere
+i, num: inteiro
+
+Inicio
+para i de 1 ate 10 faca
+    num := randI(26)
+    num := num + 65
+    c := carac(num)
+    escreval(i,"º número sorteado: ",num," que é o caractere ",c)
+fimpara
+Fimalgoritmo
+
+
+
+
+
+Algoritmo "ex.33"
+
+Var
+pal, l : caractere
+i : inteiro
+
+Inicio
+
+escreval("Digite uma palavra de 3 a 15 caracteres: ")
+leia(pal)
+
+se (3 < compr(pal)) e (compr(pal) < 15) entao
+  pal := maiusc(pal)
+  para i de 0 ate compr(pal)-1 faca
+       l := copia(pal,compr(pal)-i,1)
+       escreval(l)
+  fimpara
+senao escreval("palavra inválida!")
+fimse
+Fimalgoritmo
+
+
+
+
+
+
+
+Algoritmo "ex.34"
+
+Var
+pal, l : caractere
+i, t : inteiro
+
+Inicio
+escreval("Digite uma palavra de 3 a 20 caracteres: ")
+leia(pal)
+t := 0
+se (3 < compr(pal)) e (compr(pal) < 20) entao
+  para i de 1 ate compr(pal) faca
+       l := l + copia(pal,i,1)
+       t := i MOD 2
+       se i <> compr(pal) entao
+          se (t = 0) entao
+             l:= l+"#"
+          senao
+             l:= l+"@"
+          fimse
+       fimse
+  fimpara
+  escreval(l)
+senao
+    escreval("palavra inválida!")
+fimse
+Fimalgoritmo
+
+
+
+
+
+
+Algoritmo "ex.35"
+
+Var
+pal, l, t : caractere
+i : inteiro
+
+Inicio
+escreval("Digite uma palavra de 3 a 10 caracteres: ")
+leia(pal)
+se (3 < compr(pal)) e (compr(pal) < 20) entao
+  para i de 1 ate compr(pal) faca
+       se i <> compr(pal) entao
+         t := numpcarac(i)
+         l := l + copia(pal,i,1) + t
+       senao
+            l := l + copia(pal,i,1)
+       fimse
+  fimpara
+  escreval(l)
+senao
+    escreval("palavra inválida!")
+fimse
+Fimalgoritmo
+
+
+
+
+
+
+Algoritmo "ex.36"
+
+Var
+l,l1,l2,l3,l4: caractere
+num,num1,num2,num3,num4, i : inteiro
+
+Inicio
+
+escreva("Digite o primeiro número(entre 65 e 119): ")
+leia(num)
+escreva("Digite o segundo número(entre 65 e 119): ")
+leia(num1)
+escreva("Digite o terceiro número(entre 65 e 119): ")
+leia(num2)
+escreva("Digite o quarto número(entre 65 e 119): ")
+leia(num3)
+escreva("Digite o quinto número(entre 65 e 119): ")
+leia(num4)
+se (64 < num) e (num < 120) entao
+  l := carac(num)
+  escreval(num," tem o valor em ascii de ",l)
+senao
+    escreval("numero inválido!")
+fimse
+se (64 < num1) e (num1 < 120) entao
+  l1 := carac(num1)
+  escreval(num1," tem o valor em ascii de ",l1)
+senao
+    escreval("numero inválido!")
+fimse
+se (64 < num2) e (num2 < 120) entao
+  l2 := carac(num2)
+  escreval(num2," tem o valor em ascii de ",l2)
+senao
+    escreval("numero inválido!")
+fimse
+se (64 < num3) e (num3 < 120) entao
+  l3 := carac(num3)
+  escreval(num3," tem o valor em ascii de ",l3)
+senao
+    escreval("numero inválido!")
+fimse
+se (64 < num4) e (num4 < 120) entao
+  l4 := carac(num4)
+  escreval(num4," tem o valor em ascii de ",l4)
+senao
+    escreval("numero inválido!")
+fimse
+Fimalgoritmo
+
+
+
+
+
+
+Algoritmo "ex.37"
+
+funcao aleatoria : inteiro
+var
+num1 : inteiro
+inicio
+num1 := randI(52)
+num1:= num1 + 65
+retorne num1
+fimfuncao
+
+Var
+c : caractere
+i, num: inteiro
+
+Inicio
+para i de 1 ate 10 faca
+     num := randI(52)
+     num := num + 65
+     escolha num
+              caso 65,69,73,79,85,97,101,105,111,117,91,92,93,94,95,96
+              num := aleatoria
+     fimescolha
+     escolha num
+              caso 65,69,73,79,85,97,101,105,111,117,91,92,93,94,95,96
+              num := aleatoria
+     fimescolha
+     c := carac(num)
+     escreval(i,"º número sorteado: ",num," que é o caractere ",c)
+fimpara
+
+Fimalgoritmo
+
+
+
+
+
+Algoritmo "38"
+
+Var
+
+nome1,nome2,nome3,temp:caracter
+
+Inicio
+escreval("digite 1 nome ")
+leia(nome1)
+escreval("digite outro nome ")
+leia(nome2)
+escreval("digite o ultimo nome ")
+leia(nome3)
+se (compr(nome1)>compr(nome2))entao
+temp:=nome1
+nome1:= nome2
+nome2:=temp
+fimse
+se (compr(nome1)>compr(nome3))entao
+temp:=nome1
+nome1:= nome3
+nome3:=temp
+fimse
+se (compr(nome2)>compr(nome3))entao
+temp:=nome2
+nome2:= nome3
+nome3:=temp
+
+fimse
+escreval("A ordem crescente eh: ",nome1," ",nome2," ",nome3)
+
+Fimalgoritmo
+
+
+
+
+Algoritmo "39"
+
+Var
+
+nome1,nome2,nome3,temp:caracter
+
+Inicio
+escreval("digite 1 nome ")
+leia(nome1)
+escreval("digite outro nome ")
+leia(nome2)
+escreval("digite o ultimo nome ")
+leia(nome3)
+se (compr(nome1)<compr(nome2))entao
+temp:=nome1
+nome1:= nome2
+nome2:=temp
+fimse
+se (compr(nome1)<compr(nome3))entao
+temp:=nome1
+nome1:= nome3
+nome3:=temp
+fimse
+se (compr(nome2)<compr(nome3))entao
+temp:=nome2
+nome2:= nome3
+nome3:=temp
+
+fimse
+escreval("A ordem decrescente eh: ",nome1," ",nome2," ",nome3)
+
+Fimalgoritmo
+
+
+
+Algoritmo "Ex.45"
+
+Var
+pal, l, result, fim : caractere
+i, num,c: inteiro
+
+
+
+Inicio
+      escreval("Digite uma palavra que tenha no máximo 8 caracteres: ")
+      leia(pal)
+      se (compr(pal) > 1) e (compr(pal) < 8) entao
+         para i de 1 ate compr(pal) faca
+              l := copia(pal,i,1)
+              c:= compr(pal)+5
+              c:= c-i
+              num := asc(l)
+              num := num+c
+              result := carac(num)
+              fim := fim + result
+         fimpara
+         escreval(fim)
+      senao escreval("Sua palavra tem mais de 8 caracteres")
+      fimse
+Fimalgoritmo
+
+
+
+
+
+Algoritmo "Ex.46"
+
+Var
+pal, l, result, fim : caractere
+i, num,c: inteiro
+
+
+ Inicio
+      escreval("Digite uma palavra que tenha menos de 8 caracteres: ")
+      leia(pal)
+      se (compr(pal) > 1) e (compr(pal) < 8) entao
+         para i de 1 ate compr(pal) faca
+              l := copia(pal,i,1)
+              c:= compr(pal)+5
+              c:= c-i
+              num := asc(l)
+              num := num-c
+              result := carac(num)
+              fim := fim + result
+         fimpara
+         escreval(fim)
+      senao escreval("Sua palavra tem mais de 8 caracteres")
+     fimse
+Fimalgoritmo
